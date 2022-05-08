@@ -1,46 +1,34 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
-import logo from './logo.svg'
-import './App.css'
+import { CartProvider } from './context'
+import {
+  Cart,
+  Checkout,
+  Footer,
+  ItemDetailContainer,
+  ItemListContainer,
+  NavBar,
+  Provider
+} from './components'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img alt='logo' className='App-logo' src={logo} />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type='button' onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className='App-link'
-            href='https://reactjs.org'
-            rel='noopener noreferrer'
-            target='_blank'
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className='App-link'
-            href='https://vitejs.dev/guide/features.html'
-            rel='noopener noreferrer'
-            target='_blank'
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <CartProvider>
+      <BrowserRouter>
+        <div className='App'>
+          <NavBar />
+          <Routes>
+            <Route element={<ItemListContainer />} path='/' />
+            <Route element={<ItemListContainer />} path='/category/:brandId' />
+            <Route element={<ItemDetailContainer />} path='/item/:itemId' />
+            <Route element={<Provider />} path='/provider' />
+            <Route element={<Cart />} path='/cart' />
+            <Route element={<Checkout />} path='/checkout' />
+            <Route element={<Navigate to='/' />} path='*' />
+          </Routes>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </CartProvider>
   )
 }
-
-export default App
