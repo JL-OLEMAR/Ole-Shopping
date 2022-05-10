@@ -9,6 +9,7 @@ import {
   FormLabel,
   Heading,
   Input,
+  useToast,
   VStack
 } from '@chakra-ui/react'
 
@@ -26,6 +27,7 @@ export function Checkout() {
     email: '',
     tel: ''
   })
+  const toastAdd = useToast()
 
   const sendOrder = () => {
     const order = {
@@ -53,6 +55,13 @@ export function Checkout() {
   const handleSubmit = (e) => {
     e.preventDefault()
     sendOrder()
+
+    toastAdd({
+      description: 'Order sent successfully',
+      status: 'success',
+      duration: 3000,
+      position: 'bottom-right'
+    })
   }
 
   if (orderId) return <CheckoutSuccess orderId={orderId} />
@@ -101,7 +110,14 @@ export function Checkout() {
             return period in case of regret of purchase or manufacturing
             defects.
           </Checkbox>
-          <Button type='submit'>Submit</Button>
+          <Button
+            _hover={{ bg: 'blue.500', color: 'white' }}
+            bg='blue.400'
+            color='white'
+            type='submit'
+          >
+            Submit
+          </Button>
         </VStack>
       </form>
     </Container>
