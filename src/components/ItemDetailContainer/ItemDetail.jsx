@@ -1,16 +1,16 @@
 import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useToast } from '@chakra-ui/react'
 import {
-  Flex,
-  Center,
-  HStack,
-  VStack,
-  Image,
-  Heading,
-  Text,
   Button,
-  Divider
+  Center,
+  Divider,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  Text,
+  useToast,
+  VStack
 } from '@chakra-ui/react'
 
 import { CartContext } from '../../context'
