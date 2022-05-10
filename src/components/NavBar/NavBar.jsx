@@ -18,10 +18,11 @@ export function NavBar() {
   const [display, setDisplay] = useState('none')
 
   const listBrands = [
-    { url: '/category/Adidas', brand: 'Adidas' },
     { url: '/category/Nike', brand: 'Nike' },
-    { url: '/category/Jordan', brand: 'Jordan' },
-    { url: '/category/UA', brand: 'Under Armour' }
+    { url: '/category/Adidas', brand: 'Adidas' },
+    { url: '/category/Vans', brand: 'Vans' },
+    { url: '/category/Reebok', brand: 'Reebok' },
+    { url: '/category/Converse', brand: 'Converse' }
   ]
 
   return (
