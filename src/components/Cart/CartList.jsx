@@ -17,7 +17,7 @@ export function CartList() {
     >
       <HStack justifyContent='space-around' w='50%'>
         <Button variant='ghost' onClick={() => cleanItem(item.id)}>
-          <Icon as={FaTrashAlt} />
+          <Icon as={FaTrashAlt} color='red.500' />
         </Button>
         <Image src={item.img} w='10rem' />
         <Text>

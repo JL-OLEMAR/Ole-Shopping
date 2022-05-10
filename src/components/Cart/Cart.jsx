@@ -56,7 +56,14 @@ export function Cart() {
       <CartList />
 
       <HStack justifyContent='space-around' pt={6}>
-        <Button onClick={cleanCart}>Clean</Button>
+        <Button
+          borderColor='red.500'
+          color='red.500'
+          variant='outline'
+          onClick={cleanCart}
+        >
+          Clean
+        </Button>
         <Link to='/'>
           <Button>View more products</Button>
         </Link>

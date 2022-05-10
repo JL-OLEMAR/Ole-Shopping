@@ -33,7 +33,7 @@ export function FooterSections() {
             More
           </Text>
           <UnorderedList m={0} pt={2} spacing={2} styleType='none'>
-            <ListItem>Work on Ole-Shopping</ListItem>
+            <ListItem>Work on Ole-S.</ListItem>
             <ListItem>Others</ListItem>
           </UnorderedList>
         </Stack>

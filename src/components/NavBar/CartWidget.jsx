@@ -11,7 +11,7 @@ export function CartWidget() {
 
   return (
     <Flex>
-      <Icon as={FaShoppingCart} h={6} w={6} />
+      <Icon as={FaShoppingCart} color='red.500' h={6} w={6} />
       <Text px={2}>{countCart()}</Text>
     </Flex>
   )
